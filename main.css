@@ -1,0 +1,162 @@
+h1 {
+    font-size: 1.3em;
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: 700;
+    color: inherit;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modalBtn {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 0, 0, 0.637);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    margin: 10px;
+    width: 100px;
+}
+
+#searchBar {
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 10%;
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+
+#addBtn {
+    justify-content: center;
+    background: purple;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: black;
+    margin: 10px;
+    width: 100px;
+}
+
+#cancelBtn {
+    justify-content: center;
+    background: purple;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form input{
+    width: 100%;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.form label{
+    align-self: flex-start;
+    font-size: 20px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+}
+
+th {
+    background: #b9d3ee;
+}
+
+#table-data {
+    text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: rgba(255, 0, 0, 0.637);
+    color: white;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: rgba(255, 0, 0, 0.637);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}

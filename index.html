@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Staff list</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="header">
+        <div></div>
+    </div>
+    <div class="body">
+        <h1>Active Staff List</h1>
+        <div class="containter">
+            <button id="modalBtn">Add</button>
+            <input type="text" id="searchBar" onchange="searchFunction()" placeholder="Search for names...">
+            <select id="search-option">
+                <option value="name">Full name</option>
+                <option value="email">E-mail</option>
+                <option value="phone">Phone</option>
+            </select>
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Add new staff</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form">
+                            <label for="fullname">Full name</label>
+                            <input type="text" placeholder="Fullname" id="fullname">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" placeholder="Date of Birth" id="dob">
+                            <label for="phone">Phone</label>
+                            <input type="text" placeholder="Phone number" id="phone">
+                            <label for="email">E-mail</label>
+                            <input type="email" placeholder="E-mail" id="email">
+                            <label for="department">Department</label>
+                            <input type="text" placeholder="Department" id="department">
+                            <label for="position">Position</label>
+                            <input type="text" placeholder="Position" id="position">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="addBtn" type="submit">OK</button>
+                        <button id="cancelBtn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table>
+                    <thead id="table-header">
+                        <tr>
+                            <th>No</th>
+                            <th id="FN">Full Name</th>
+                            <th>Date of Birth</th>
+                            <th>Phone</th>
+                            <th>E-mail</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-data">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
