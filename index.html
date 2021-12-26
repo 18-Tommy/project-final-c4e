@@ -11,23 +11,38 @@
 
 <body>
     <div class="header">
-        <div></div>
+        <div class="navbar">
+            <a href="/">Staff Management</a>
+            <a href="#performancereview">Performance Review</a>
+            <div class="dropdown">
+              <button class="dropbtn">Leave Request</button>
+              <div class="dropdown-content">
+                <a href="#createrequest">Create Request</a>
+                <a href="#receiverequest">Receive Request</a>
+              </div>
+            </div>
+            <a href="./login.html" class="log-out" style="float: right;">Log out</a>
+            <div id="user-fullname"></div>
+        </div>
     </div>
     <div class="body">
         <h1>Active Staff List</h1>
         <div class="containter">
             <button id="modalBtn">Add</button>
-            <input type="text" id="searchBar" onchange="searchFunction()" placeholder="Search for names...">
+            <input type="text" id="search-bar" onkeyup="searchFunction()" placeholder="Search ...">
             <select id="search-option">
                 <option value="name">Full name</option>
-                <option value="email">E-mail</option>
+                <option value="dob">Date of Birth</option>
                 <option value="phone">Phone</option>
+                <option value="email">E-mail</option>
+                <option value="department">Department</option>
+                <option value="position">Position</option>
             </select>
             <div class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="close">&times;</span>
-                        <h2>Add new staff</h2>
+                        <h2>ADD NEW STAFF</h2>
                     </div>
                     <div class="modal-body">
                         <div class="form">
@@ -55,14 +70,14 @@
                 <table>
                     <thead id="table-header">
                         <tr>
-                            <th>No</th>
-                            <th id="FN">Full Name</th>
-                            <th>Date of Birth</th>
-                            <th>Phone</th>
-                            <th>E-mail</th>
-                            <th>Department</th>
-                            <th>Position</th>
-                            <th>Edit</th>
+                            <th class="sorting"><span>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th class="sorting-name"><span>Full Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th class="sorting-dob">Date of Birth</th>
+                            <th class="sorting-phone">Phone</th>
+                            <th class="sorting-email">E-mail</th>
+                            <th class="sorting-department">Department</th>
+                            <th class="sorting-pos">Position</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody id="table-data">
@@ -73,7 +88,7 @@
         </div>
     </div>
     <div class="footer">
-
+        <p>© Brand name</p>
     </div>
     <script src="script.js"></script>
 </body>

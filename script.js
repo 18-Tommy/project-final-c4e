@@ -1,32 +1,380 @@
-let staffList = [
-    {
-        id: 1,
-        name: "Ada",
-        dob: "1990-10-10",
-        phone: "C",
-        email: "D",
-        department: "E",
-        position: "F",
-    },
-    {
-        id: 2,
-        name: "Za",
-        dob: "1991-11-11",
-        phone: "D",
-        email: "E",
-        department: "F",
-        position: "G",
-    },
-    {
-        id: 3,
-        name: "X",
-        dob: "1992-12-12",
-        phone: "z",
-        email: "t",
-        department: "ge",
-        position: "sue",
-    },
-];
+const fullname = JSON.parse(localStorage.getItem("userInfo")).fullname;
+// let staffList = [
+//     {
+//         id: 1,
+//         name: "B",
+//         dob: "1990-10-10",
+//         phone: "0915055032",
+//         email: "B@gmail.com",
+//         department: "Accouting",
+//         position: "Staff",
+//     },
+//     {
+//         id: 2,
+//         name: "A",
+//         dob: "1991-11-11",
+//         phone: "081236598",
+//         email: "A@gmail.com",
+//         department: "Sales",
+//         position: "Team Leader",
+//     },
+//     {
+//         id: 3,
+//         name: "M",
+//         dob: "1992-12-12",
+//         phone: "012356895",
+//         email: "M@gmail.com",
+//         department: "Accouting",
+//         position: "Deputy Chief Accountant",
+//     },
+//     {
+//         id: 4,
+//         name: "Z",
+//         dob: "1980-8-10",
+//         phone: "01236952841",
+//         email: "Z@gmail.com",
+//         department: "Product",
+//         position: "Staff",
+//     },
+//     {
+//         id: 5,
+//         name: "H",
+//         dob: "1995-10-12",
+//         phone: "0126308457",
+//         email: "H@gmail.com",
+//         department: "Product",
+//         position: "Staff",
+//     },
+//     {
+//         id: 6,
+//         name: "To",
+//         dob: "1996-12-12",
+//         phone: "019348424",
+//         email: "To@gmail.com",
+//         department: "Back Office",
+//         position: "Staff",
+//     },
+//     {
+//         id: 7,
+//         name: "P",
+//         dob: "1982-12-12",
+//         phone: "012685211",
+//         email: "P@gmail.com",
+//         department: "Product",
+//         position: "Team Leader",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+//     {
+//         id: 8,
+//         name: "T",
+//         dob: "1998-8-18",
+//         phone: "0857518898",
+//         email: "T@gmail.com",
+//         department: "Product",
+//         position: "Chief Technology Officer",
+//     },
+// ];
+if (!localStorage.getItem("staffList")) {
+    localStorage.setItem("staffList", JSON.stringify([]));
+}
+
+let staffList = JSON.parse(localStorage.getItem('staffList'));
 let editId = null;
 
 const table = document.querySelector("#table-data");
@@ -41,15 +389,48 @@ const modalBtn = document.querySelector("#modalBtn");
 const closeBtn = document.querySelector(".close");
 const cancelBtn = document.querySelector("#cancelBtn");
 const addBtn = document.querySelector("#addBtn");
-const searchInput = document.querySelector("#searchBar");
-const fn = document.querySelector("#FN");
+const searchInput = document.querySelector("#search-bar");
+const sort = document.querySelector(".sorting");
+const sortName = document.querySelector(".sorting-name");
+// const sortDob = document.querySelector(".sorting-dob");
+// const sortPhone = document.querySelector(".sorting-phone");
+// const sortEmail = document.querySelector(".sorting-email");
+// const sortDepartment = document.querySelector(".sorting-department");
+// const sortPos = document.querySelector(".sorting-pos");
+const userFullname = document.querySelector("#user-fullname");
+userFullname.innerHTML = `Hello: ${fullname}`;
 
-fn.addEventListener("click", function() {
-    staffList.sort(sortAsc);
+sort.addEventListener("click", function() {
+    staffList.reverse();
     refreshTable();
 });
 
-function sortAsc(firstEl, secondEl) {
+let stage = {
+    columnName: "",
+    isAsc: true,
+}
+
+
+
+sortName.addEventListener("click", function() {
+    stage.columnName = "name";
+    if (stage.isAsc) {
+        staffList.sort(sortNameAsc);
+        stage.isAsc = false;
+        document.querySelector(".sorting-name .asce").setAttribute("style", "visibility: initial");
+        document.querySelector(".sorting-name .desc").setAttribute("style", "visibility: hidden");
+        refreshTable();
+    } else {
+        staffList.sort(sortNameDes);
+        stage.isAsc = true;
+        document.querySelector(".sorting-name .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-name .desc").setAttribute("style", "visibility: initial");
+        refreshTable();
+    }
+});
+
+
+function sortNameAsc(firstEl, secondEl) {
     if (firstEl.name < secondEl.name) {
         return -1;
     }
@@ -59,14 +440,76 @@ function sortAsc(firstEl, secondEl) {
     return 0;
 }
 
+function sortNameDes(firstEl, secondEl) {
+    if (firstEl.name < secondEl.name) {
+        return 1;
+    }
+    if (firstEl.name > secondEl.name) {
+        return -1;
+    }
+    return 0;
+}
+
 function searchFunction() {
     const searchValue = searchInput.value;
     const option = document.querySelector("#search-option").value;
-    const res = staffList.filter(function(item) {
-        return item[`${option}`].includes(searchValue);
+    const searchArr = staffList.filter(function(item) {
+        return item[`${option}`].toLowerCase().includes(searchValue.toLowerCase());
     });
-    refreshTable();
-    console.log(res);
+    table.innerHTML = "";
+    for (let i = 0; i < searchArr.length; i++) {
+        const staff = searchArr[i];
+        const row = document.createElement("tr");
+        const col1 = document.createElement("td");
+        const col2 = document.createElement("td");
+        const col3 = document.createElement("td");
+        const col4 = document.createElement("td");
+        const col5 = document.createElement("td");
+        const col6 = document.createElement("td");
+        const col7 = document.createElement("td");
+        const col8 = document.createElement("td");
+        const delBtn = document.createElement("button");
+        const editBtn = document.createElement("button");
+
+        col1.innerHTML = staff.id;
+        col2.innerHTML = staff.name;
+        col3.innerHTML = staff.dob;
+        col4.innerHTML = staff.phone;
+        col5.innerHTML = staff.email;
+        col6.innerHTML = staff.department;
+        col7.innerHTML = staff.position;
+
+        let delIcon = document.createElement("img");
+        delIcon.setAttribute("style", "width: 20px; height: 20px;");
+        delIcon.setAttribute("src", "./icon-del.png");
+        delBtn.appendChild(delIcon);
+        delBtn.style.marginRight = "10px"
+        delBtn.addEventListener("click", function () {
+            delStaffFunction(staff.id);
+        })
+
+        let editIcon = document.createElement("img");
+        editIcon.setAttribute("style", "width: 20px", "height: 20px");
+        editIcon.setAttribute("src", "/icon-edit.png");
+        editBtn.appendChild(editIcon);
+        editBtn.addEventListener("click", function () {
+            editStaffFunction(staff.id);
+            openModal();
+        })
+
+        col8.appendChild(delBtn);
+        col8.appendChild(editBtn);
+
+        row.appendChild(col1);
+        row.appendChild(col2);
+        row.appendChild(col3);
+        row.appendChild(col4);
+        row.appendChild(col5);
+        row.appendChild(col6);
+        row.appendChild(col7);
+        row.appendChild(col8);
+        table.appendChild(row);
+    }
 }
 
 function openModal() {
@@ -100,7 +543,6 @@ function clearInput() {
     positionInput.value = "";
 };
 
-
 function refreshTable() {
     table.innerHTML = "";
     for (let i = 0; i < staffList.length; i++) {
@@ -125,19 +567,22 @@ function refreshTable() {
         col6.innerHTML = staff.department;
         col7.innerHTML = staff.position;
 
-        let delIcon = document.createElement('img')
-        delIcon.setAttribute('style', 'width: 20px; height: 20px')
-        delIcon.setAttribute('src', './icon-del.png')
-        delBtn.appendChild(delIcon)
-
+        let delIcon = document.createElement("img");
+        delIcon.setAttribute("style", "width: 20px; height: 20px;");
+        delIcon.setAttribute("src", "./icon-del.png");
+        delBtn.appendChild(delIcon);
+        delBtn.style.marginRight = "10px"
         delBtn.addEventListener("click", function () {
             delStaffFunction(staff.id);
         })
 
-        editBtn.innerHTML = "Edit";
-        editBtn.addEventListener("click", openModal);
+        let editIcon = document.createElement("img");
+        editIcon.setAttribute("style", "width: 20px", "height: 20px");
+        editIcon.setAttribute("src", "/icon-edit.png");
+        editBtn.appendChild(editIcon);
         editBtn.addEventListener("click", function () {
             editStaffFunction(staff.id);
+            openModal();
         })
 
         col8.appendChild(delBtn);
@@ -191,18 +636,19 @@ addBtn.addEventListener("click", function () {
         }
         staffList.push(newStaff);
         addId();
-    }
+    };
+    localStorage.setItem("staffList", JSON.stringify(staffList));
     closeModal();
     refreshTable();
     clearInput();
 });
-
-console.log(staffList);
+refreshTable();
 
 function delStaffFunction(id) {
     const index = staffList.findIndex((item) => item.id === id);
     staffList.splice(index, 1);
     addId();
+    localStorage.setItem("staffList", JSON.stringify(staffList));
     refreshTable();
 }
 
@@ -216,13 +662,14 @@ function editStaffFunction(id) {
     departmentInput.value = staff.department;
     positionInput.value = staff.position;
     editId = id;
+    console.log(staffList);
     refreshTable();
 }
+
+
 
 function addId() {
     for (let k = 0; k < staffList.length; k++) {
         staffList[k].id = k + 1;
     }
 }
-
-refreshTable();

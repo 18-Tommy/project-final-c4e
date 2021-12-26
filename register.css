@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 0, 0, 0.637);
+    height: 100vh;
+    background-image: url("login-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon-register {
+    display: flex;
+    align-self: center;
+    width: 40px;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background: white;
+    border-radius: 12px;
+}
+
+.body h1 {
+    display: flex;
+    align-self: center;
+}
+
+.body form {
+    height: 100%;
+    width: 400px;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+  
+.body label {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+}
+  
+.body input {
+    padding: 10px;
+    width:calc(100% - 20px);
+    border-radius: 8px;
+}
+
+.body input:focus {
+    background: chocolate;
+}
+
+.body input[type='submit'], input[type='button'] {
+    background: chartreuse;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 200px;
+    align-self: center;
+    margin-top: 10px;
+}
