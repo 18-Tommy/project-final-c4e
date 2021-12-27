@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Active Staff list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <div class="header">
-        <div class="navbar">
+        <div class="navigation-bar">
             <a href="/">Staff Management</a>
             <a href="#performancereview">Performance Review</a>
             <div class="dropdown">
@@ -27,7 +28,7 @@
     </div>
     <div class="body">
         <h1>Active Staff List</h1>
-        <div class="containter">
+        <div class="feature-containter">
             <button id="modalBtn">Add</button>
             <input type="text" id="search-bar" onkeyup="searchFunction()" placeholder="Search ...">
             <select id="search-option">
@@ -38,14 +39,14 @@
                 <option value="department">Department</option>
                 <option value="position">Position</option>
             </select>
-            <div class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
+            <div class="modal-box">
+                <div class="modal-box-content">
+                    <div class="modal-box-header">
                         <span class="close">&times;</span>
                         <h2>ADD NEW STAFF</h2>
                     </div>
-                    <div class="modal-body">
-                        <div class="form">
+                    <div class="modal-box-body">
+                        <div class="modal-form">
                             <label for="fullname">Full name</label>
                             <input type="text" placeholder="Fullname" id="fullname">
                             <label for="dob">Date of Birth</label>
@@ -60,24 +61,24 @@
                             <input type="text" placeholder="Position" id="position">
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-box-footer">
                         <button id="addBtn" type="submit">OK</button>
                         <button id="cancelBtn">Cancel</button>
                     </div>
                 </div>
             </div>
             <div>
-                <table>
+                <table class="table table-hover">
                     <thead id="table-header">
                         <tr>
-                            <th class="sorting"><span>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th class="sorting-no"><span>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
                             <th class="sorting-name"><span>Full Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
-                            <th class="sorting-dob">Date of Birth</th>
-                            <th class="sorting-phone">Phone</th>
-                            <th class="sorting-email">E-mail</th>
-                            <th class="sorting-department">Department</th>
-                            <th class="sorting-pos">Position</th>
-                            <th>Action</th>
+                            <th class="sorting-dob"><span>Date of Birth</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th class="sorting-phone"><span>Phone</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th class="sorting-email"><span>E-mail</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th class="sorting-department"><span>Department</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th class="sorting-pos"><span>Position</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><div class="desc">🔼</div><div class="asce">🔽</div></span></th>
+                            <th style="vertical-align: middle;">Action</th>
                         </tr>
                     </thead>
                     <tbody id="table-data">

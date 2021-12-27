@@ -1,15 +1,17 @@
 body {
     margin: 0;
 }
-.navbar {
+
+.navigation-bar {
     overflow: hidden;
     background-color: rgb(255, 0, 0);
     position: fixed;
     width: 100%;
     top: 0;
+    font-family: 'Times New Roman';
 }
 
-.navbar a {
+.navigation-bar a {
     float: left;
     font-size: 20px;
     color: white;
@@ -34,7 +36,7 @@ body {
     margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navigation-bar a:hover, .dropdown:hover .dropbtn {
     background-color: grey;
     color: black;
 }
@@ -84,6 +86,7 @@ body {
     position: fixed;
     bottom: 0;
     height: 50px;
+    font-family: 'Times New Roman'
 }
 
 .footer p {
@@ -112,7 +115,7 @@ h1 {
     justify-content: center;
 }
 
-.container {
+.feature-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,20 +177,20 @@ h1 {
     font-weight: 700;
 }
 
-.form {
+.modal-form {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.form input{
+.modal-form input{
     width: 100%;
     height: 20px;
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
-.form label{
+.modal-form label{
     align-self: flex-start;
     font-size: 20px;
 }
@@ -195,6 +198,7 @@ h1 {
 table {
     width: 100%;
     border: 1px solid black;
+    text-align: center;
 }
 
 th {
@@ -206,7 +210,7 @@ th {
 }
 
 /* The Modal (background) */
-.modal {
+.modal-box {
     display: none;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -216,7 +220,7 @@ th {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-box-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -256,18 +260,18 @@ th {
     cursor: pointer;
 }
 
-.modal-header {
+.modal-box-header {
     padding: 2px 16px;
     background-color: rgba(255, 0, 0, 0.637);
     color: white;
     text-align: center;
 }
 
-.modal-body {
+.modal-box-body {
     padding: 2px 16px;
 }
 
-.modal-footer {
+.modal-box-footer {
     padding: 2px 16px;
     background-color: rgba(255, 0, 0, 0.637);
     color: white;
@@ -275,7 +279,7 @@ th {
     justify-content: flex-end;
 }
 
-.sorting-name span, .sorting span {
+.sorting-name span, .sorting-no span, .sorting-dob span, .sorting-phone span, .sorting-email span, .sorting-department span, .sorting-pos span{
     display: inline-block;
     vertical-align: middle;
 }
