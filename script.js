@@ -29,23 +29,36 @@ const sortPos = document.querySelector(".sorting-pos");
 const userFullname = document.querySelector("#user-fullname");
 userFullname.innerHTML = `Hello: ${fullname}`;
 
+window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    refreshTable(staffList);
+});
+
 let stage = {
     columnName: "",
-    isAsc: true,
+    code: 0,
 }
 
 sortNo.addEventListener("click", function() {
     stage.columnName = "id"
-    if (stage.isAsc) {
+    if (stage.code == 1) {
         staffList.sort(sortNoAsc);
-        stage.isAsc = false;
+        stage.code = 2;
         document.querySelector(".sorting-no .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-no .desc").setAttribute("style", "visibility: hidden");
         refreshTable(staffList);
-    } else {
+    } else if (stage.code == 2){
         staffList.reverse();
-        stage.isAsc = true;
+        stage.code = 0;
         document.querySelector(".sorting-no .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-no .desc").setAttribute("style", "visibility: initial");
+        refreshTable(staffList);
+    } else {
+        staffList.sort(sortNoAsc);
+        stage.code = 1;
+        document.querySelector(".sorting-no .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-no .desc").setAttribute("style", "visibility: initial");
         refreshTable(staffList);
     }
@@ -63,16 +76,22 @@ function sortNoAsc(firstEl, secondEl) {
 
 sortName.addEventListener("click", function() {
     stage.columnName = "name";
-    if (stage.isAsc) {
+    if (stage.code == 1) {
         staffList.sort(sortNameAsc);
-        stage.isAsc = false;
+        stage.code = 2;
         document.querySelector(".sorting-name .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-name .desc").setAttribute("style", "visibility: hidden");
         refreshTable(staffList);
-    } else {
+    } else if (stage.code == 2) {
         staffList.reverse(sortNameAsc);
-        stage.isAsc = true;
+        stage.code = 0;
         document.querySelector(".sorting-name .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-name .desc").setAttribute("style", "visibility: initial");
+        refreshTable(staffList);
+    } else {
+        staffList.sort(sortNoAsc);
+        stage.code = 1;
+        document.querySelector(".sorting-name .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-name .desc").setAttribute("style", "visibility: initial");
         refreshTable(staffList);
     }
@@ -90,16 +109,22 @@ function sortNameAsc(firstEl, secondEl) {
 
 sortDob.addEventListener("click", function() {
     stage.columnName = "dob"
-    if (stage.isAsc) {
+    if (stage.code == 1) {
         staffList.sort(sortDobAsc);
-        stage.isAsc = false;
+        stage.code = 2;
         document.querySelector(".sorting-dob .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-dob .desc").setAttribute("style", "visibility: hidden");
         refreshTable(staffList);
-    } else {
+    } else if (stage.code == 2) {
         staffList.reverse(sortDobAsc);
-        stage.isAsc = true;
+        stage.code = 0;
         document.querySelector(".sorting-dob .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-dob .desc").setAttribute("style", "visibility: initial");
+        refreshTable(staffList);
+    } else {
+        staffList.sort(sortNoAsc);
+        stage.code = 1;
+        document.querySelector(".sorting-dob .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-dob .desc").setAttribute("style", "visibility: initial");
         refreshTable(staffList);
     }
@@ -117,16 +142,22 @@ function sortDobAsc(firstEl, secondEl) {
 
 sortPhone.addEventListener("click", function() {
     stage.columnName = "phone"
-    if (stage.isAsc) {
+    if (stage.code == 1) {
         staffList.sort(sortPhoneAsc);
-        stage.isAsc = false;
+        stage.code = 2;
         document.querySelector(".sorting-phone .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-phone .desc").setAttribute("style", "visibility: hidden");
         refreshTable(staffList);
-    } else {
+    } else if (stage.code == 2) {
         staffList.reverse(sortPhoneAsc);
-        stage.isAsc = true;
+        stage.code = 0;
         document.querySelector(".sorting-phone .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-phone .desc").setAttribute("style", "visibility: initial");
+        refreshTable(staffList);
+    } else {
+        staffList.sort(sortNoAsc);
+        stage.code = 1;
+        document.querySelector(".sorting-phone .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-phone .desc").setAttribute("style", "visibility: initial");
         refreshTable(staffList);
     }
@@ -144,16 +175,22 @@ function sortPhoneAsc(firstEl, secondEl) {
 
 sortEmail.addEventListener("click", function() {
     stage.columnName = "email"
-    if (stage.isAsc) {
+    if (stage.code == 1) {
         staffList.sort(sortEmailAsc);
-        stage.isAsc = false;
+        stage.code = 2;
         document.querySelector(".sorting-email .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-email .desc").setAttribute("style", "visibility: hidden");
         refreshTable(staffList);
-    } else {
+    } else if (stage.code == 2) {
         staffList.reverse(sortEmailAsc);
-        stage.isAsc = true;
+        stage.code = 0;
         document.querySelector(".sorting-email .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-email .desc").setAttribute("style", "visibility: initial");
+        refreshTable(staffList);
+    } else {
+        staffList.sort(sortNoAsc);
+        stage.code = 1;
+        document.querySelector(".sorting-email .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-email .desc").setAttribute("style", "visibility: initial");
         refreshTable(staffList);
     }
@@ -171,16 +208,22 @@ function sortEmailAsc(firstEl, secondEl) {
 
 sortDepartment.addEventListener("click", function() {
     stage.columnName = "department"
-    if (stage.isAsc) {
+    if (stage.code == 1) {
         staffList.sort(sortDepartmentAsc);
-        stage.isAsc = false;
+        stage.code = 2;
         document.querySelector(".sorting-department .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-department .desc").setAttribute("style", "visibility: hidden");
         refreshTable(staffList);
-    } else {
+    } else if (stage.code == 2){
         staffList.reverse(sortDepartmentAsc);
-        stage.isAsc = true;
+        stage.code = 0;
         document.querySelector(".sorting-department .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-department .desc").setAttribute("style", "visibility: initial");
+        refreshTable(staffList);
+    } else {
+        staffList.sort(sortNoAsc);
+        stage.code = 1;
+        document.querySelector(".sorting-department .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-department .desc").setAttribute("style", "visibility: initial");
         refreshTable(staffList);
     }
@@ -198,16 +241,22 @@ function sortDepartmentAsc(firstEl, secondEl) {
 
 sortPos.addEventListener("click", function() {
     stage.columnName = "position"
-    if (stage.isAsc) {
+    if (stage.code == 1) {
         staffList.sort(sortPosAsc);
-        stage.isAsc = false;
+        stage.code = 2;
         document.querySelector(".sorting-pos .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-pos .desc").setAttribute("style", "visibility: hidden");
         refreshTable(staffList);
-    } else {
+    } else if (stage.code == 2) {
         staffList.reverse(sortPosAsc);
-        stage.isAsc = true;
+        stage.code = 0;
         document.querySelector(".sorting-pos .asce").setAttribute("style", "visibility: hidden");
+        document.querySelector(".sorting-pos .desc").setAttribute("style", "visibility: initial");
+        refreshTable(staffList);
+    } else {
+        staffList.sort(sortNoAsc);
+        stage.code = 1;
+        document.querySelector(".sorting-pos .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-pos .desc").setAttribute("style", "visibility: initial");
         refreshTable(staffList);
     }
