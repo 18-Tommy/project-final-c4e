@@ -41,13 +41,13 @@ sortNo.addEventListener("click", function() {
         stage.isAsc = false;
         document.querySelector(".sorting-no .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-no .desc").setAttribute("style", "visibility: hidden");
-        refreshTable();
+        refreshTable(staffList);
     } else {
         staffList.reverse();
         stage.isAsc = true;
         document.querySelector(".sorting-no .asce").setAttribute("style", "visibility: hidden");
         document.querySelector(".sorting-no .desc").setAttribute("style", "visibility: initial");
-        refreshTable();
+        refreshTable(staffList);
     }
 });
 
@@ -68,13 +68,13 @@ sortName.addEventListener("click", function() {
         stage.isAsc = false;
         document.querySelector(".sorting-name .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-name .desc").setAttribute("style", "visibility: hidden");
-        refreshTable();
+        refreshTable(staffList);
     } else {
         staffList.reverse(sortNameAsc);
         stage.isAsc = true;
         document.querySelector(".sorting-name .asce").setAttribute("style", "visibility: hidden");
         document.querySelector(".sorting-name .desc").setAttribute("style", "visibility: initial");
-        refreshTable();
+        refreshTable(staffList);
     }
 });
 
@@ -95,13 +95,13 @@ sortDob.addEventListener("click", function() {
         stage.isAsc = false;
         document.querySelector(".sorting-dob .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-dob .desc").setAttribute("style", "visibility: hidden");
-        refreshTable();
+        refreshTable(staffList);
     } else {
         staffList.reverse(sortDobAsc);
         stage.isAsc = true;
         document.querySelector(".sorting-dob .asce").setAttribute("style", "visibility: hidden");
         document.querySelector(".sorting-dob .desc").setAttribute("style", "visibility: initial");
-        refreshTable();
+        refreshTable(staffList);
     }
 });
 
@@ -122,13 +122,13 @@ sortPhone.addEventListener("click", function() {
         stage.isAsc = false;
         document.querySelector(".sorting-phone .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-phone .desc").setAttribute("style", "visibility: hidden");
-        refreshTable();
+        refreshTable(staffList);
     } else {
         staffList.reverse(sortPhoneAsc);
         stage.isAsc = true;
         document.querySelector(".sorting-phone .asce").setAttribute("style", "visibility: hidden");
         document.querySelector(".sorting-phone .desc").setAttribute("style", "visibility: initial");
-        refreshTable();
+        refreshTable(staffList);
     }
 });
 
@@ -149,13 +149,13 @@ sortEmail.addEventListener("click", function() {
         stage.isAsc = false;
         document.querySelector(".sorting-email .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-email .desc").setAttribute("style", "visibility: hidden");
-        refreshTable();
+        refreshTable(staffList);
     } else {
         staffList.reverse(sortEmailAsc);
         stage.isAsc = true;
         document.querySelector(".sorting-email .asce").setAttribute("style", "visibility: hidden");
         document.querySelector(".sorting-email .desc").setAttribute("style", "visibility: initial");
-        refreshTable();
+        refreshTable(staffList);
     }
 });
 
@@ -176,13 +176,13 @@ sortDepartment.addEventListener("click", function() {
         stage.isAsc = false;
         document.querySelector(".sorting-department .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-department .desc").setAttribute("style", "visibility: hidden");
-        refreshTable();
+        refreshTable(staffList);
     } else {
         staffList.reverse(sortDepartmentAsc);
         stage.isAsc = true;
         document.querySelector(".sorting-department .asce").setAttribute("style", "visibility: hidden");
         document.querySelector(".sorting-department .desc").setAttribute("style", "visibility: initial");
-        refreshTable();
+        refreshTable(staffList);
     }
 });
 
@@ -203,13 +203,13 @@ sortPos.addEventListener("click", function() {
         stage.isAsc = false;
         document.querySelector(".sorting-pos .asce").setAttribute("style", "visibility: initial");
         document.querySelector(".sorting-pos .desc").setAttribute("style", "visibility: hidden");
-        refreshTable();
+        refreshTable(staffList);
     } else {
         staffList.reverse(sortPosAsc);
         stage.isAsc = true;
         document.querySelector(".sorting-pos .asce").setAttribute("style", "visibility: hidden");
         document.querySelector(".sorting-pos .desc").setAttribute("style", "visibility: initial");
-        refreshTable();
+        refreshTable(staffList);
     }
 });
 
@@ -229,60 +229,7 @@ function searchFunction() {
     const searchArr = staffList.filter(function(item) {
         return item[`${option}`].toLowerCase().includes(searchValue.toLowerCase());
     });
-    table.innerHTML = "";
-    for (let i = 0; i < searchArr.length; i++) {
-        const staff = searchArr[i];
-        const row = document.createElement("tr");
-        const col1 = document.createElement("td");
-        const col2 = document.createElement("td");
-        const col3 = document.createElement("td");
-        const col4 = document.createElement("td");
-        const col5 = document.createElement("td");
-        const col6 = document.createElement("td");
-        const col7 = document.createElement("td");
-        const col8 = document.createElement("td");
-        const delBtn = document.createElement("button");
-        const editBtn = document.createElement("button");
-
-        col1.innerHTML = staff.id;
-        col2.innerHTML = staff.name;
-        col3.innerHTML = staff.dob;
-        col4.innerHTML = staff.phone;
-        col5.innerHTML = staff.email;
-        col6.innerHTML = staff.department;
-        col7.innerHTML = staff.position;
-
-        let delIcon = document.createElement("img");
-        delIcon.setAttribute("style", "width: 20px; height: 20px;");
-        delIcon.setAttribute("src", "./icon-del.png");
-        delBtn.appendChild(delIcon);
-        delBtn.style.marginRight = "10px"
-        delBtn.addEventListener("click", function () {
-            delStaffFunction(staff.id);
-        })
-
-        let editIcon = document.createElement("img");
-        editIcon.setAttribute("style", "width: 20px", "height: 20px");
-        editIcon.setAttribute("src", "/icon-edit.png");
-        editBtn.appendChild(editIcon);
-        editBtn.addEventListener("click", function () {
-            editStaffFunction(staff.id);
-            openModal();
-        })
-
-        col8.appendChild(delBtn);
-        col8.appendChild(editBtn);
-
-        row.appendChild(col1);
-        row.appendChild(col2);
-        row.appendChild(col3);
-        row.appendChild(col4);
-        row.appendChild(col5);
-        row.appendChild(col6);
-        row.appendChild(col7);
-        row.appendChild(col8);
-        table.appendChild(row);
-    }
+    refreshTable(searchArr);
 }
 
 function openModal() {
@@ -316,10 +263,10 @@ function clearInput() {
     positionInput.value = "";
 };
 
-function refreshTable() {
+function refreshTable(array) {
     table.innerHTML = "";
-    for (let i = 0; i < staffList.length; i++) {
-        const staff = staffList[i];
+    for (let i = 0; i < array.length; i++) {
+        const staff = array[i];
         const row = document.createElement("tr");
         const col1 = document.createElement("td");
         const col2 = document.createElement("td");
@@ -342,7 +289,7 @@ function refreshTable() {
 
         let delIcon = document.createElement("img");
         delIcon.setAttribute("style", "width: 20px; height: 20px;");
-        delIcon.setAttribute("src", "./icon-del.png");
+        delIcon.setAttribute("src", "./img/icon-del.png");
         delBtn.appendChild(delIcon);
         delBtn.style.marginRight = "10px"
         delBtn.addEventListener("click", function () {
@@ -351,7 +298,7 @@ function refreshTable() {
 
         let editIcon = document.createElement("img");
         editIcon.setAttribute("style", "width: 20px", "height: 20px");
-        editIcon.setAttribute("src", "/icon-edit.png");
+        editIcon.setAttribute("src", "/img/icon-edit.png");
         editBtn.appendChild(editIcon);
         editBtn.addEventListener("click", function () {
             editStaffFunction(staff.id);
@@ -412,17 +359,17 @@ addBtn.addEventListener("click", function () {
     };
     localStorage.setItem("staffList", JSON.stringify(staffList));
     closeModal();
-    refreshTable();
+    refreshTable(staffList);
     clearInput();
 });
-refreshTable();
+refreshTable(staffList);
 
 function delStaffFunction(id) {
     const index = staffList.findIndex((item) => item.id === id);
     staffList.splice(index, 1);
     addId();
     localStorage.setItem("staffList", JSON.stringify(staffList));
-    refreshTable();
+    refreshTable(staffList);
 }
 
 function editStaffFunction(id) {
@@ -435,11 +382,8 @@ function editStaffFunction(id) {
     departmentInput.value = staff.department;
     positionInput.value = staff.position;
     editId = id;
-    console.log(staffList);
-    refreshTable();
+    refreshTable(staffList);
 }
-
-
 
 function addId() {
     for (let k = 0; k < staffList.length; k++) {

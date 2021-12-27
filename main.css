@@ -4,7 +4,7 @@ body {
 
 .navigation-bar {
     overflow: hidden;
-    background-color: rgb(255, 0, 0);
+    background-color: purple;
     position: fixed;
     width: 100%;
     top: 0;
@@ -80,7 +80,7 @@ body {
     display: block;
     font-size: 20px;
     overflow: hidden;
-    background-color: rgb(255, 0, 0);
+    background-color: purple;
     width: 100%;
     color: white;
     position: fixed;
@@ -282,4 +282,10 @@ th {
 .sorting-name span, .sorting-no span, .sorting-dob span, .sorting-phone span, .sorting-email span, .sorting-department span, .sorting-pos span{
     display: inline-block;
     vertical-align: middle;
+}
+
+.sorting-no:hover, .sorting-name:hover, .sorting-dob:hover, .sorting-phone:hover, .sorting-email:hover, .sorting-department:hover, .sorting-pos:hover {
+    background-color: rgba(255, 0, 0, 0.637);
+    color: white;
+    cursor: pointer;
 }
