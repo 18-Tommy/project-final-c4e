@@ -23,6 +23,7 @@ form.addEventListener("submit", (e) => {
   passwordInput.value = "";
   fullNameInput.value = "";
   alert("Đăng ký thành công");
+  window.location.href = "./login.html";
 });
 
 function login() {
