@@ -28,13 +28,11 @@ const sortDepartment = document.querySelector(".sorting-department");
 const sortPos = document.querySelector(".sorting-pos");
 const userFullname = document.querySelector("#user-fullname");
 userFullname.innerHTML = `Hello: ${fullname}`;
+const hny = document.querySelector(".hny-container")
 
-window.addEventListener("click", function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    refreshTable(staffList);
-});
+window.addEventListener("click", function() {
+    hny.style.display = "none";
+})
 
 let stage = {
     columnName: "",
@@ -177,6 +175,11 @@ function sortPosAsc(firstEl, secondEl) {
     return 0;
 }
 
+document.querySelector("#search-bar").addEventListener("click", function() {
+    clearSort();
+    staffList.sort(sortNoAsc);
+})
+
 function searchFunction() {
     const searchValue = searchInput.value;
     const option = document.querySelector("#search-option").value;
@@ -197,11 +200,13 @@ function closeModal() {
 modalBtn.addEventListener("click", function () {
     openModal();
 });
+
 closeBtn.addEventListener("click", function () {
     closeModal();
     clearInput();
     editId = null;
 })
+
 cancelBtn.addEventListener("click", function () {
     closeModal();
     clearInput();

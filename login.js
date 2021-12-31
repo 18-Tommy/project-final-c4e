@@ -14,7 +14,7 @@ form.addEventListener("submit", (e) => {
   );
   localStorage.setItem("userInfo", JSON.stringify(listUser[check]));
   if (check >= 0) {
-    window.location.href = "./index.html";
+    window.location.href = "./event.html";
   } else {
     alert("The username or password you entered is incorrect");
   }

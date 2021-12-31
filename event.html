@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year!</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .hny-container {
+            background: url(./img/hny.png);
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            font-size: 50px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url(./font/Kingthings\ Flashbang.ttf);
+        }
+
+        .hny {
+            margin-top: 85vh;
+            margin-left: 20vw;
+            font-family: myFirstFont;
+            font-size: 115px;
+            color: #c00025;
+            animation-name: hny;
+            animation-duration: 3s;
+            animation-delay: 0.5s;
+            animation-iteration-count: 100;
+        }
+
+        @keyframes hny {
+            0% {
+                color: #c00025;
+            }
+
+            50% {
+                color: #ffe095;
+            }
+
+            100% {
+                color: #c00025;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hny-container">
+        <h1 class="hny">HAPPY NEW YEAR !!!</h1>
+    </div>
+    <script>
+        let toIndex = setTimeout(function () {
+            window.location.href = "./index.html";
+        }, 7000);
+        window.addEventListener("click", function () {
+            window.location.href = "./index.html";
+        })
+    </script>
+</body>
+
+</html>
